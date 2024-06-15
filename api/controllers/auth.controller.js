@@ -1,12 +1,12 @@
 import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
+import { errorHandler } from "../utils/error.js";
 
-const signup = async (req, res) => {
+const signup = async (req, res,next) => {
   const { username, email, password } = req.body;
 
   // hashed user password by bcryptjs which will save in database
   // const hashedPassword = await bcryptjs.hash(password,10);
-
   const hashedPassword = bcryptjs.hashSync(password, 10);
 
   // create a new user
