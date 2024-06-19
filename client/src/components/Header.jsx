@@ -37,12 +37,12 @@ function Header() {
             </li>
           </Link>
 
-          <Link to="/sign-in" >
+          <Link to="/profile" >
           {currentUser? (<img className="rounded-full h-7 w-7 object-cover" src={currentUser.avatar} alt="profile" />): (
             <li className="sm:inline text-slate-700 hover:underline cursor-pointer">
               Sign in
             </li> )}
-          </Link>
+          </Link> 
         </ul>
       </div>
     </header>
