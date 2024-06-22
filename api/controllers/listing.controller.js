@@ -1,4 +1,5 @@
 import Listing from "../models/listing.model.js"
+import { errorHandler } from "../utils/error.js";
 
 export const createListing  = async(req,res,next)  => {
 
@@ -9,5 +10,5 @@ export const createListing  = async(req,res,next)  => {
         next(error);    
     }
 }
+ 
 
-  
