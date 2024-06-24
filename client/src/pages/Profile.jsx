@@ -287,7 +287,10 @@ function Profile() {
                   className="h-16 w-16 object-contain"
                 />
               </Link>
-              <Link to={`/listing/${listing._id}`} className="flex-1 text-slate-700 font-semibold hover:underline truncate">
+              <Link
+                to={`/listing/${listing._id}`}
+                className="flex-1 text-slate-700 font-semibold hover:underline truncate"
+              >
                 <p>{listing.name}</p>
               </Link>
 
@@ -298,7 +301,9 @@ function Profile() {
                 >
                   Delete
                 </button>
-                <button className="text-blue-700 uppercase">Edit</button>
+                <Link to={`update-listing/${listing._id}`}>
+                  <button className="text-blue-700 uppercase">Edit</button>
+                </Link>
               </div>
             </div>
           ))}
