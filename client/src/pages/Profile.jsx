@@ -154,6 +154,7 @@ function Profile() {
     }
   };
 
+  
   const handleListingDelete = async (listingId) => {
     try {
       const res = fetch(`/api/listing/delete/${listingId}`, {
@@ -170,7 +171,7 @@ function Profile() {
         prev.filter((listing) => listing._id !== listingId)
       );
     } catch (error) {
-      console.log(error.message);
+      console.log(error.message); 
     }
   };
 
