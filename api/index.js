@@ -5,6 +5,8 @@ import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import listingRouter from "./routes/listing.route.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
+
 
 
 dotenv.config();
@@ -12,10 +14,10 @@ dotenv.config();
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("MongoDB connected successfully!!");
+    console.log("MongoDB connected successfully!!"); 
   })
   .catch((err) => {
-    console.log(err);
+    console.log(err); 
   });
 
 const app = express();
@@ -29,7 +31,8 @@ app.use(express.json());
 // get the data from cookies
 app.use(cookieParser());
 
- 
+app.use(cors());
+
 
 // routes
 app.use("/api/user", userRouter);
